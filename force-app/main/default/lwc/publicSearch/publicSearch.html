@@ -1,0 +1,35 @@
+<template>
+    <div class="public-search">
+        <div class="google-top-ad-container">
+            <c-ad-google div-id="Homepage_Top" variant="gamAdUnit"></c-ad-google>
+        </div>
+        <main class="main-wrapper slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning-input type="text" placeholder="Search" value={searchQuery} onkeydown={onSearchKeydown}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <template if:true={isLoading}>
+                    <div class="main-wrapper">
+                        <c-loading-block variant="search"></c-loading-block>
+                    </div>
+                </template>
+                <template if:true={searchResults}>
+                    <template for:each={searchResults} for:item="article">
+                        <div key={article.Id} class="search-result">
+                            <c-card article={article} variant="icon-image-summary"></c-card>
+                        </div>
+                    </template>
+                </template>
+                <template if:true={noResultsFound}>
+                    <div class="no-results-found slds-col slds-size_1-of-1 slds-medium-size_5-of-12 slds-order_2 slds-medium-order_1">
+                        <h1>0 results found for - "{searchQuery}"</h1>
+                        <div>Try these tips to broaden your search results.</div>
+                        <div>- Make sure you have spelled everything correctly</div>
+                        <div>- Broaden your search by being more generic</div>
+                        <div>- Try an alternative keyword of phrase</div>
+                    </div>
+                </template>
+            </div>
+        </main>
+    </div>
+</template>

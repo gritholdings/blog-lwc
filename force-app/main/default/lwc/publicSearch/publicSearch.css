@@ -1,0 +1,52 @@
+@media (min-width: 1300px) {
+    .public-search .main-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+    .public-search .main-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .public-search .main-wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.public-search {
+    margin-top: -1.5rem;
+}
+
+.public-search .no-results-found {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    width: 100%;
+}
+
+.public-search .no-results-found h1 {
+    font-size: 3.5rem;
+    word-wrap: break-word;
+}
+
+.public-search .main-wrapper {
+    padding-top: 1.5rem;
+}
+
+.public-search .search-result {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.public-search lightning-input {
+    font-size: 2.125rem;
+    --slds-c-input-spacing-horizontal-end: 2rem;
+    --slds-c-input-spacing-horizontal-start: 2rem;
+    --lwc-heightInput: 5rem;
+}
